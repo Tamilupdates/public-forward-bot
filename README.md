@@ -15,7 +15,7 @@
 * `API_HASH` API Hash from my.telegram.org
 * `API_ID` API ID from my.telegram.org
 * `BOT_TOKEN` Bot token from @BotFather
-* `OWNER_ID_ID` Telegram Id of OWNER_ID.
+* `OWNER_ID` Telegram Id of OWNER_ID.
 * `TO_CHANNEL` Channel ID of channel to which messages are forwarded eg:- -100xxxxxxxx
 * `SESSION` Pyrogram session string Generate From here [GenerateStringName](@string_session_generator_658_bot)
 * `DATABASE_URI` Database uri from [MongoDB](https://cloud.mongodb.com/)

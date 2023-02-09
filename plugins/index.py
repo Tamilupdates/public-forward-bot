@@ -19,7 +19,7 @@ caption=""
 channel_type=""
 channel_id_=""
 IST = pytz.timezone('Asia/Kolkata')
-OWNER_ID=int(Config.OWNER_ID_ID)
+OWNER_ID=int(Config.OWNER_ID)
 
 
 @Client.on_message(filters.private & filters.command(["index"]))

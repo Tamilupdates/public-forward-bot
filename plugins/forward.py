@@ -15,7 +15,7 @@ IST = pytz.timezone('Asia/Kolkata')
 MessageCount = 0
 BOT_STATUS = "0"
 status = set(int(x) for x in (BOT_STATUS).split())
-OWNER_ID_ID=int(Config.OWNER_ID_ID)
+OWNER_ID=int(Config.OWNER_ID)
 @Client.on_message(filters.command("status"))
 async def count(bot, m):
     if 1 in status:
@@ -54,7 +54,7 @@ async def forward(bot, message):
     if 2 in status:
         await message.reply_text("Sleeping the engine for avoiding ban.")
         return
-    m=await bot.send_message(chat_id=OWNER_ID_ID, text="Started Forwarding")
+    m=await bot.send_message(chat_id=OWNER_ID, text="Started Forwarding")
     global MessageCount
     mcount = random.randint(10000, 15300)
     acount = random.randint(5000, 6000)

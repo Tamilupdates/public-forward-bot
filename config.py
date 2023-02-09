@@ -5,7 +5,7 @@ class Config:
     API_HASH = os.environ.get("API_HASH", "")       
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
     BOT_SESSION = os.environ.get("BOT_SESSION", "forwardbot")
-    OWNER_ID_ID = os.environ.get("OWNER_ID_ID", "")                             
+    OWNER_ID = os.environ.get("OWNER_ID", "")                             
     DATABASE_URI = os.environ.get("DATABASE_URI", "")  
     DATABASE_NAME = os.environ.get("DATABASE_NAME", "Cluste0")
     COLLECTION_NAME = os.environ.get('COLLECTION_NAME', 'Data')
