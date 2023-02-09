@@ -15,7 +15,7 @@ IST = pytz.timezone('Asia/Kolkata')
 MessageCount = 0
 BOT_STATUS = "0"
 status = set(int(x) for x in (BOT_STATUS).split())
-OWNER=int(Config.OWNER_ID)
+OWNER_ID_ID=int(Config.OWNER_ID_ID)
 @Client.on_message(filters.command("status"))
 async def count(bot, m):
     if 1 in status:
@@ -54,7 +54,7 @@ async def forward(bot, message):
     if 2 in status:
         await message.reply_text("Sleeping the engine for avoiding ban.")
         return
-    m=await bot.send_message(chat_id=OWNER, text="Started Forwarding")
+    m=await bot.send_message(chat_id=OWNER_ID_ID, text="Started Forwarding")
     global MessageCount
     mcount = random.randint(10000, 15300)
     acount = random.randint(5000, 6000)
@@ -131,7 +131,7 @@ async def forward(bot, message):
                     await m.edit(text=f"Total Forwarded : <code>{MessageCount}</code>\nForwarded Using: Bot\nSleeping for {1} Seconds\nLast Forwarded at {ISTIME}")
                 except Exception as e:
                     print(e)
-                    await bot.send_message(chat_id=OWNER, text=f"LOG-Error: {e}")
+                    await bot.send_message(chat_id=OWNER_ID, text=f"LOG-Error: {e}")
                     pass
             elif methord == "user":
                 channel=int(channel)
@@ -159,10 +159,10 @@ async def forward(bot, message):
                                                 await bot.USER.send_cached_media(chat_id=chat_id, file_id=file_idn, caption=caption)
                                             except Exception as e:
                                                 print(e)
-                                                await bot.send_message(OWNER, f"LOG-Error-{e}")
+                                                await bot.send_message(OWNER_ID, f"LOG-Error-{e}")
                                                 pass
                                         except:
-                                            await bot.send_message(chat_id=OWNER, text=f"LOG-Error: {e}")
+                                            await bot.send_message(chat_id=OWNER_ID, text=f"LOG-Error: {e}")
                                             print(e)
                                             pass
                                     except FileReferenceEmpty:
@@ -178,10 +178,10 @@ async def forward(bot, message):
                                                 await bot.USER.send_cached_media(chat_id=chat_id, file_id=file_idn, caption=caption)
                                             except Exception as e:
                                                 print(e)
-                                                await bot.send_message(chat_id=OWNER, text=f"LOG-Error: {e}")
+                                                await bot.send_message(chat_id=OWNER_ID, text=f"LOG-Error: {e}")
                                                 pass
                                         except:
-                                            await bot.send_message(chat_id=OWNER, text=f"LOG-Error: {e}")
+                                            await bot.send_message(chat_id=OWNER_ID, text=f"LOG-Error: {e}")
                                             print(e)
                                             pass
                                     except MediaEmpty:
@@ -196,15 +196,15 @@ async def forward(bot, message):
                                                 await bot.USER.send_cached_media(chat_id=chat_id, file_id=file_idn, caption=caption)
                                             except Exception as e:
                                                 print(e)
-                                                await bot.send_message(chat_id=OWNER, text=f"LOG-Error: {e}")
+                                                await bot.send_message(chat_id=OWNER_ID, text=f"LOG-Error: {e}")
                                                 pass
                                         except:
-                                            await bot.send_message(chat_id=OWNER, text=f"LOG-Error: {e}")
+                                            await bot.send_message(chat_id=OWNER_ID, text=f"LOG-Error: {e}")
                                             print(e)
                                             pass
                                     except Exception as e:
                                         print(e)
-                                        await bot.send_message(chat_id=OWNER, text=f"LOG-Error: {e}")
+                                        await bot.send_message(chat_id=OWNER_ID, text=f"LOG-Error: {e}")
                                         pass
                                 else:
                                     try:
@@ -216,7 +216,7 @@ async def forward(bot, message):
                                             message_id=message_id
                                             )
                                     except Exception as e:
-                                        await bot.send_message(chat_id=OWNER, text=f"LOG-Error: {e}")
+                                        await bot.send_message(chat_id=OWNER_ID, text=f"LOG-Error: {e}")
                                         print(e)
                                         pass
 
@@ -248,9 +248,9 @@ async def forward(bot, message):
                                     await m.edit(text=f"Total Forwarded : <code>{MessageCount}</code>\nForwarded Using: User\nSleeping for {mainsleep} Seconds\nLast Forwarded at {ISTIME}")
                                 except FloodWait as e:
                                     print(e)
-                                    await bot.send_message(chat_id=OWNER, text=f"Floodwait of {e} sec")
+                                    await bot.send_message(chat_id=OWNER_ID, text=f"Floodwait of {e} sec")
                                 except Exception as e:
-                                    await bot.send_message(OWNER, e)
+                                    await bot.send_message(OWNER_ID, e)
                                     print(e)
                                     pass
                                 print(f"Sleeping:{mainsleep}")
@@ -270,7 +270,7 @@ async def forward(bot, message):
                                     ISTIME = datetime_ist.strftime("%I:%M:%S %p - %d %B %Y")
                                     await m.edit(text=f"You have send {MessageCount} messages.\nWaiting for {csleep} Seconds.\nLast Forwarded at {ISTIME}")
                                 except Exception as e:
-                                    await bot.send_message(OWNER, e)
+                                    await bot.send_message(OWNER_ID, e)
                                     print(e)
                                     pass
                                     
@@ -293,7 +293,7 @@ async def forward(bot, message):
                                 ISTIME = datetime_ist.strftime("%I:%M:%S %p - %d %B %Y")
                                 await m.edit(text=f"You have send {MessageCount} messages.\nWaiting for {bsl} seconds.\nLast Forwarded at {ISTIME}")
                             except Exception as e:
-                                await bot.send_message(OWNER, e)
+                                await bot.send_message(OWNER_ID, e)
                                 print(e)
                                 pass
                             await asyncio.sleep(bsl)
@@ -316,7 +316,7 @@ async def forward(bot, message):
                             ISTIME = datetime_ist.strftime("%I:%M:%S %p - %d %B %Y")
                             await m.edit(text=f"You have send {MessageCount} messages.\nWaiting for {asl} seconds.\nLast Forwarded at {ISTIME}")
                         except Exception as e:
-                            await bot.send_message(OWNER, e)
+                            await bot.send_message(OWNER_ID, e)
                             print(e)
                             pass
                         await asyncio.sleep(asl)
@@ -339,7 +339,7 @@ async def forward(bot, message):
                         await m.edit(text=f"You have send {MessageCount} messages.\nWaiting for {msl} seconds.\nLast Forwarded at {ISTIME}")
                     except Exception as e:
                         
-                        await bot.send_message(OWNER, e)
+                        await bot.send_message(OWNER_ID, e)
                         print(e)
                         pass
                     await asyncio.sleep(msl)
@@ -351,7 +351,7 @@ async def forward(bot, message):
     try:
         await m.edit(text=f'Succesfully Forwarded {MessageCount} messages')
     except Exception as e:
-        await bot.send_message(OWNER, e)
+        await bot.send_message(OWNER_ID, e)
         print(e)
         pass
     try:

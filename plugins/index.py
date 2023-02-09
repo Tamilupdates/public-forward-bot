@@ -19,12 +19,12 @@ caption=""
 channel_type=""
 channel_id_=""
 IST = pytz.timezone('Asia/Kolkata')
-OWNER=int(Config.OWNER_ID)
+OWNER_ID=int(Config.OWNER_ID_ID)
 
 
 @Client.on_message(filters.private & filters.command(["index"]))
 async def run(bot, message):
-    if message.from_user.id != OWNER:
+    if message.from_user.id != OWNER_ID:
         await message.reply_text("Who the hell are you!!")
         return
     while True:
@@ -203,7 +203,7 @@ async def cb_handler(bot: Client, query: CallbackQuery):
                 await save_data(id, channel, message_id, methord, msg_caption, file_type)
             except Exception as e:
                 print(e)
-                await bot.send_message(OWNER, f"LOG-Error-{e}")
+                await bot.send_message(OWNER_ID, f"LOG-Error-{e}")
                 pass
             msg_count += 1
             mcount += 1
@@ -219,7 +219,7 @@ async def cb_handler(bot: Client, query: CallbackQuery):
                     print(f"Floodwait {e.x}")
                     pass
                 except Exception as e:
-                    await bot.send_message(chat_id=OWNER, text=f"LOG-Error: {e}")
+                    await bot.send_message(chat_id=OWNER_ID, text=f"LOG-Error: {e}")
                     print(e)
                     pass
         await m.edit(f"Succesfully Indexed <code>{msg_count}</code> messages.")

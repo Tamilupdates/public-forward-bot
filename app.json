@@ -44,7 +44,7 @@
       "value": "Forward_data",
       "required": false
     },
-    "OWNER_ID": {
+    "OWNER_ID_ID": {
       "description": "Enter Your Telegram id",
       "value": ""
     },
